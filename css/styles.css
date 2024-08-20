@@ -23,7 +23,7 @@ body {
   line-height: 24px;
   color: var(--slate);
   font-size: 16px;
-  background-color: #ffffff;
+  background-color: var(--white);
   min-height: 100vh;
 }
 h1,
@@ -74,7 +74,7 @@ button {
   width: 1px;
 }
 
-/*  first mobile */
+/* #region first mobile */
 
 /* #region heder */
 .heder {
@@ -141,10 +141,12 @@ button {
 }
 .container-menu {
   position: absolute;
+  z-index: 1000;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -181,7 +183,7 @@ button {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: #434455;
+  color: var(--slate);
 }
 .social-list {
   display: flex;
@@ -213,7 +215,7 @@ button {
 }
 .menu-nav {
   margin-top: 72px;
-  margin-bottom: 168px;
+  margin-bottom: auto;
 }
 
 /* #endregion heder */
@@ -235,9 +237,9 @@ button {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office@1x.jpg);
+    url(../images/office-mobile@1x.jpg);
   background-repeat: no-repeat;
-  background-color: #2e2f42b2;
+  background-color: var(--navy-blue);
   background-position: center;
   background-size: cover;
 }
@@ -247,9 +249,9 @@ button {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/people-office@2x.jpg);
+      url(../images/office-mobile@2x.jpg);
     background-repeat: no-repeat;
-    background-color: #2e2f42b2;
+    background-color: var(--navy-blue);
     background-position: center;
     background-size: cover;
   }
@@ -355,6 +357,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 48px;
+  background-color: var(--white);
 }
 .text-img {
   display: none;
@@ -370,6 +373,11 @@ button {
   border-right: 1px solid #e7e9fc;
   padding: 32px 16px;
 }
+.portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .portfolio-name {
   font-weight: 500;
   font-size: 20px;
@@ -381,7 +389,7 @@ button {
 .portfolio-post {
   text-align: center;
 }
-
+/* #endregion portfolio */
 /* #region footer */
 .footer {
   background-color: var(--navy-blue);
@@ -391,6 +399,11 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 72px;
+}
+.box{
+  display: flex;
+  flex-direction: column;
   gap: 72px;
 }
 .footer-part,
@@ -657,7 +670,7 @@ button {
   border-color: #4d5ae5;
 }
 
-/* checked */
+   /* checked */
 
 .check-box {
   margin-bottom: 24px;
@@ -721,10 +734,12 @@ button {
 .modal-send-btn:hover,
 .modal-send-btn:focus {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: #404bbf;
+  background-color: var(--iris);
 }
 
-/* #endregion modal-window */
+ /* #endregion modal-window */
+
+/* #endregion first mobile */
 
 @media screen and (min-width: 768px) {
   /* #region heder */
@@ -739,7 +754,7 @@ button {
     display: none;
   }
   .container-tablet {
-    min-width: 736px;
+    min-width: 768px;
     padding: 0 16px;
     display: flex;
     flex-direction: row;
@@ -759,6 +774,7 @@ button {
   }
   .menu-link-tablet {
     display: block;
+    padding: 24px 0;
   }
   .menu-link-tablet.active {
     position: relative;
@@ -768,7 +784,7 @@ button {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -14px;
+    bottom: -1px;
     width: 100%;
     height: 4px;
     background-color: var(--ocean);
@@ -799,9 +815,9 @@ button {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/people-office-tablet@1x.jpg);
+      url(../images/office-tablet@1x.jpg);
     background-repeat: no-repeat;
-    background-color: #2e2f42b2;
+    background-color: var(--navy-blue);
     background-position: center;
     background-size: cover;
   }
@@ -811,9 +827,9 @@ button {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url(../images/people-office-tablet@2x.jpg);
+        url(../images/office-tablet@2x.jpg);
       background-repeat: no-repeat;
-      background-color: #2e2f42b2;
+      background-color: var(--navy-blue);
       background-position: center;
       background-size: cover;
     }
@@ -833,6 +849,9 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 72px 24px;
+  }
+  .subtitle-features{
+    text-align: start;
   }
   .features-text {
     font-weight: 500;
@@ -882,12 +901,12 @@ button {
     flex-direction: column;
     justify-content: center;
     gap: 72px;
-    padding: 0 164px 0 108px;
+    width: 584px;
   }
   .box {
     display: flex;
     align-items: baseline;
-    justify-content: center;
+    flex-direction: row;
     gap: 24px;
   }
   .form-footer {
@@ -965,9 +984,13 @@ button {
     display: block;
     padding-top: 24px;
     padding-bottom: 24px;
+    font-size: 16px;
   }
   .menu-link-tablet.active::after {
     bottom: 0px;
+  }
+  .contacts-link-tablet {
+    font-size: 16px;
   }
 
   /* #endregion header */
@@ -978,9 +1001,9 @@ button {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/people-office@1x.jpg);
+      url(../images/office@1x.jpg);
     background-repeat: no-repeat;
-    background-color: #2e2f42b2;
+    background-color: var(--navy-blue);
     background-position: center;
     background-size: cover;
   }
@@ -990,9 +1013,9 @@ button {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url(../images/people-office@2x.jpg);
+        url(../images/office@2x.jpg);
       background-repeat: no-repeat;
-      background-color: #2e2f42b2;
+      background-color: var(--navy-blue);
       background-position: center;
       background-size: cover;
     }
@@ -1027,7 +1050,7 @@ button {
     border-radius: 4px;
     width: 264px;
     height: 112px;
-    background: #f4f4fd;
+    background: var(--cloud);
     margin-bottom: 8px;
   }
   .subtitle-features {
@@ -1089,11 +1112,12 @@ button {
   }
   /* #endregion portfolio */
   /* #region footer */
-
-  .container-footer {
-    display: flex;
-    flex-direction: row;
+  .footer {
     padding: 100px 0;
+  }
+  .container-footer {
+    width: 1158px;
+    flex-direction: row; 
     gap: 80px;
   }
   .box {
