@@ -766,6 +766,7 @@ button {
   }
   .menu-nav-tablet {
     display: flex;
+    align-items: center;
     gap: 120px;
   }
   .menu-list-tablet {
